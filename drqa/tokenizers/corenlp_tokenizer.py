@@ -26,11 +26,13 @@ class CoreNLPTokenizer(Tokenizer):
             classpath: Path to the corenlp directory of jars
             mem: Java heap memory
         """
-        self.classpath = (kwargs.get('classpath') or
-                          DEFAULTS['corenlp_classpath'])
+        # self.classpath = (kwargs.get('classpath') or
+        #                   DEFAULTS['corenlp_classpath'])
+        self.classpath = "data/corenlp/*"
         self.annotators = copy.deepcopy(kwargs.get('annotators', set()))
         self.mem = kwargs.get('mem', '2g')
-        self._launch()
+        print(self.classpath)
+        # self._launch()
 
     def _launch(self):
         """Start the CoreNLP jar with pexpect."""
