@@ -24,10 +24,10 @@ mkdir -p "$DOWNLOAD_PATH"
 mv "/tmp/stanford-corenlp-full-2017-06-09/"*".jar" "$DOWNLOAD_PATH/"
 
 # Append to bashrc, instructions
-while read -p "Add to ~/.bashrc CLASSPATH (recommended)? [yes/no]: " choice; do
+while read -p "Add to ~/.zshrc CLASSPATH (recommended)? [yes/no]: " choice; do
     case "$choice" in
         yes )
-            echo "export CLASSPATH=\$CLASSPATH:$DOWNLOAD_PATH/*" >> ~/.bashrc;
+            echo "export CLASSPATH=\$CLASSPATH:$DOWNLOAD_PATH/*" >> ~/.zshrc;
             break ;;
         no )
             break ;;
